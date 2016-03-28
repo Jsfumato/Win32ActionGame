@@ -4,17 +4,20 @@
 #include "stdafx.h"
 #include "2d_action.h"
 #include "GameManager.h"
+#include "SceneManager.h"
 
 #define MAX_LOADSTRING 100
 
 // Global Variables:
 HINSTANCE hInst;								// current instance
+HWND hWnd;
 TCHAR szTitle[MAX_LOADSTRING];					// The title bar text
 TCHAR szWindowClass[MAX_LOADSTRING];			// the main window class name
 
 //	custom class
-CMyInput* MyInput = nullptr;
-GameManager* GameSceneManager = nullptr;
+CMyInput*		MyInput = nullptr;
+GameManager*	GameRuleManager = nullptr;
+SceneManager*	SceneStackManager = nullptr;
 
 // Forward declarations of functions included in this code module:
 ATOM				MyRegisterClass(HINSTANCE hInstance);
@@ -59,8 +62,24 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 		}
 		else
 		{
-			GameSceneManager->GetKeyInput();
-			GameSceneManager->DoCharacterAction();
+			HDC hdc = GetDC(hWnd);
+
+			//메모리 버퍼 생성
+			HDC		memoryDC = CreateCompatibleDC(hdc);
+			HBITMAP memoryBitmap = CreateCompatibleBitmap(hdc, 800, 600);
+			SelectObject(memoryDC, memoryBitmap);
+
+			//Manager들의 logic
+			SceneStackManager->GetCurrentScene()->DrawScene(memoryDC);
+			GameRuleManager->GetKeyInput();
+			//SceneStackManager->GetCurrentScene()->
+
+			BitBlt(hdc, 0, 0, 800, 600, memoryDC, 0, 0, SRCCOPY);
+
+			DeleteObject(memoryBitmap);
+			DeleteDC(memoryDC);
+
+			ReleaseDC(hWnd, hdc);
 		}
 	}
 
@@ -107,8 +126,6 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
-   HWND hWnd;
-
    hInst = hInstance; // Store instance handle in our global variable
 
    hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
@@ -120,8 +137,10 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    }
 
    MyInput = new CMyInput();
-   GameSceneManager = GameManager::GetInstance();
-
+   GameRuleManager = GameManager::GetInstance();
+   SceneStackManager = SceneManager::GetInstance();
+   SceneStackManager->Init();
+   
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 

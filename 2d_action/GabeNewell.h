@@ -1,12 +1,12 @@
 #pragma once
 #include "Character.h"
 
-class CharacterGabe : Character
+class CharacterGabe : public Character
 {
 public:
-	CharacterGabe(){
-		HitPoint = 20000;
-	};
+	CharacterGabe(std::wstring fileName)
+		:Character("GabeNewell", L"GabeNewell.png", 20000)
+	{};
 
 private:
 

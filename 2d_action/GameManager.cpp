@@ -10,6 +10,5 @@ void GameManager::GetKeyInput()
 
 void GameManager::DoCharacterAction()
 {
-
 	actionManager;
 }

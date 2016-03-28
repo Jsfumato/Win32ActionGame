@@ -80,13 +80,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2d_action.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="GabeNewell.h" />
+    <ClInclude Include="GameConfig.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="ActionManager.h" />
+    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Label.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="MyInput.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SelectScene.h" />
+    <ClInclude Include="StartScene.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -95,7 +104,14 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="ActionManager.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="Label.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SelectScene.cpp" />
+    <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -107,6 +123,7 @@
   <ItemGroup>
     <Image Include="2d_action.ico" />
     <Image Include="small.ico" />
+    <Image Include="Sprite\BackgroundImage\background.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

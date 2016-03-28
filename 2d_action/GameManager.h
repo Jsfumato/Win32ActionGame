@@ -14,6 +14,13 @@ public:
 		return instance;
 	};
 
+	~GameManager()
+	{
+		delete inputManager;
+		delete actionManager;
+		delete instance;
+	}
+
 	void	GetKeyInput();
 	void	DoCharacterAction();
 
@@ -25,5 +32,3 @@ private:
 	InputManager*	inputManager;
 	ActionManager*	actionManager;
 };
-
-//GameManager* GameManager::instance = nullptr;
