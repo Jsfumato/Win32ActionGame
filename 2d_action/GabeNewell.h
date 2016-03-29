@@ -1,11 +1,11 @@
 #pragma once
 #include "Character.h"
 
-class CharacterGabe : public Character
+class CharacterGabeNewell : public Character
 {
 public:
-	CharacterGabe()
-		:Character("GabeNewell", L"GabeNewell.png", 20000)
+	CharacterGabeNewell()
+		:Character("GabeNewell", L"GabeNewell_0.png", 20000)
 	{
 		SetProfile(L"profile_GabeNewell.png", L"Character");
 	};

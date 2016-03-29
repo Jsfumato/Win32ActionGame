@@ -23,3 +23,16 @@ void Character::DrawProfile(HDC hdc, int xDest, int yDest)
 {
 	profileImage.BitBlt(hdc, xDest, yDest, 200, 300, 0, 0, SRCCOPY);
 }
+
+void Character::MoveCharacter(int direction)
+{
+	int dir = direction / abs(direction);
+
+	int newXDest = m_xDest + 30 * dir;
+	
+	//후에 상수화 하여 window 크기를 변경해도 무리없도록 변경
+	if ((newXDest < 0) || (newXDest > 500))
+		return;
+
+	m_xDest = newXDest;
+}

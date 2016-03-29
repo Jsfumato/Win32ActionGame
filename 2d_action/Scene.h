@@ -23,11 +23,12 @@ public:
 
 	virtual void DrawScene(HDC hdc) const;
 	virtual void DoAction(int keyInput);
+	virtual void InitScene();
 
 	bool SetBackgroundImage(std::wstring bgName);
 	bool AppendObject(Object* object);
 
-	virtual void InitScene();
+	
 
 private:
 	CImage backgroundImage;

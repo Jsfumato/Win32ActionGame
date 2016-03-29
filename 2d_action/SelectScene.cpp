@@ -21,7 +21,8 @@ void SelectScene::InitScene()
 		300
 		);
 
-	characterList.push_back(new CharacterGabe());
+
+	characterList.push_back(new CharacterGabeNewell());
 
 	selectedCharacter = characterList.front();
 }
@@ -36,8 +37,14 @@ void SelectScene::DoAction(int keyInput)
 	if (keyInput == VK_LEFT)
 		MoveSelecter(-1);
 
-	if (keyInput == 'S')
-		SceneManager::GetInstance()->PushScene(new GameScene());
+	if (keyInput == 'A')
+	{
+		GameScene* gameScene = new GameScene(L"SelectScene.png");
+		if (selectedCharacter != nullptr)
+			gameScene->AddCharacter(selectedCharacter);
+
+		SceneManager::GetInstance()->PushScene(gameScene);
+	}
 }
 
 //num이 양수면 오른쪽, 음수면 왼쪽으로 이동

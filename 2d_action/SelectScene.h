@@ -6,7 +6,6 @@
 class SelectScene : public Scene
 {
 public:
-	SelectScene() :Scene(){};
 	SelectScene(std::wstring bgName)
 		:Scene(bgName)
 	{

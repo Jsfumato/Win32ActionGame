@@ -18,10 +18,11 @@ public:
 	}
 
 	void DrawProfile(HDC hdc, int xDest, int yDest);
+	
+	virtual void MoveCharacter(int direction);
 
 protected:
 	CImage profileImage;
-	CImage CharacterSprite;
 	
 	std::string	characterName;
 	int	hitPoint;

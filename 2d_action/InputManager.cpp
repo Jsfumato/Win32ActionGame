@@ -16,12 +16,6 @@ void InputManager::InputCommand()
 
 		CommandWithTimeQueue.push_back(std::make_pair(keyNum, 0));
 	}
-	
-//	각 Command의 입력으로부터 경과한 시간을 갱신한다
-	for (auto& iter : CommandWithTimeQueue)
-	{
-		iter.second += 1;
-	}
 
 //	Closure 디자인 패턴 사용
 //	각 Command의 입력으로부터 경과한 시간을 체크한다
@@ -32,7 +26,10 @@ void InputManager::InputCommand()
 
 const int InputManager::GetLastCommand()
 {
-	if (CommandWithTimeQueue.size() != 0)
+	if (CommandWithTimeQueue.size() == 0)
+		return -1;
+
+	if (CommandWithTimeQueue.back().second == 0)
 		return CommandWithTimeQueue.back().first;
 }
 
@@ -57,6 +54,15 @@ void InputManager::CommandValidTimeCheck(std::function<bool(int)> closure)
 			CommandWithTimeQueue.erase(iter);
 			break;
 		}
+	}
+}
+
+void InputManager::AddClockCommendTime()
+{
+	//	각 Command의 입력으로부터 경과한 시간을 갱신한다
+	for (auto& iter : CommandWithTimeQueue)
+	{
+		iter.second += 1;
 	}
 }
 

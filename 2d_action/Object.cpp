@@ -7,7 +7,7 @@ void Object::Draw(HDC hdc)
 		return;
 
 	//objectImage.BitBlt(hdc, m_xDest, m_yDest, m_nDestWidth, m_nDestHeight, m_xSrc, m_ySrc, m_dwROP);
-	objectImage.TransparentBlt(hdc, m_xDest, m_yDest, m_nDestWidth, m_nDestHeight, m_xSrc, m_ySrc, m_nSrcWidth, m_nSrcHeight, m_transColor);
+	bool result = objectImage.TransparentBlt(hdc, m_xDest, m_yDest, m_nDestWidth, m_nDestHeight, m_xSrc, m_ySrc, m_nSrcWidth, m_nSrcHeight, m_transColor);
 }																								   
 
 bool Object::SetSprite(std::wstring fileName, std::wstring folderName)

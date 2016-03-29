@@ -15,6 +15,7 @@ public:
 
 	const void GetCommandList();
 	const int GetLastCommand();
+	void AddClockCommendTime();
 
 private:
 	//int Player1CommandList[8];

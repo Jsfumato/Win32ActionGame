@@ -15,4 +15,5 @@ void GameManager::DoAction()
 	Scene* curScene = SceneManager::GetInstance()->GetCurrentScene();
 
 	curScene->DoAction(keyInput);
+	inputManager->AddClockCommendTime();
 }

@@ -8,7 +8,7 @@ public:
 	virtual void Draw(HDC hdc);
 
 	Object()
-		:m_xDest(0), m_yDest(0), m_nDestWidth(800), m_nDestHeight(800), m_xSrc(0), m_ySrc(0), m_nSrcWidth(0), m_nSrcHeight(0), m_dwROP(SRCCOPY), m_transColor(RGB(128, 0, 128))
+		:m_xDest(0), m_yDest(0), m_nDestWidth(300), m_nDestHeight(350), m_xSrc(0), m_ySrc(0), m_nSrcWidth(300), m_nSrcHeight(350), m_dwROP(SRCCOPY), m_transColor(RGB(128, 255, 0))
 	{}
 
 	void SetObjectImageAttr(int xDest, int yDest, int nDestWidth, int nDestHeight, int xSrc, int ySrc, int nSrcWidth, int nSrcHeight, COLORREF transColor);
