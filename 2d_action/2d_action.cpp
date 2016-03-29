@@ -14,6 +14,7 @@
 
 		* 후에 layer를 구현하여 각 componenet 들을 분리하여 관리할 수 있도록
 			- http://stackoverflow.com/questions/12479386/how-to-draw-text-with-transparent-background-using-c-winapi
+		* http://skmagic.tistory.com/entry/%EC%B4%88%EB%8B%B9-%ED%94%84%EB%A0%88%EC%9E%84-%EC%88%98-fps-Frame-Per-Second-%EC%B4%9D%EC%A0%95%EB%A6%AC
 */
 
 #define MAX_LOADSTRING 100
