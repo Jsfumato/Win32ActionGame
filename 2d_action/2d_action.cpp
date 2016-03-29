@@ -6,6 +6,16 @@
 #include "GameManager.h"
 #include "SceneManager.h"
 
+/*
+	::	131088 Hwang JongSung
+	::	Win32 API를 이용한 action game 구현을 목표로 함
+
+	::	다음 목표 중 1:
+
+		* 후에 layer를 구현하여 각 componenet 들을 분리하여 관리할 수 있도록
+			- http://stackoverflow.com/questions/12479386/how-to-draw-text-with-transparent-background-using-c-winapi
+*/
+
 #define MAX_LOADSTRING 100
 
 // Global Variables:
@@ -62,6 +72,9 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 		}
 		else
 		{
+			//Game Logic을 최대한 Win32와 분리하는 것이 목적
+			//후에 다른 Game Engine에 이식가능한 수준으로 제작할 수 있어야...
+
 			HDC hdc = GetDC(hWnd);
 
 			//메모리 버퍼 생성
@@ -70,10 +83,14 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 			SelectObject(memoryDC, memoryBitmap);
 
 			//Manager들의 logic
+			//먼저 SceneStack의 최상위 Scene을 draw
 			SceneStackManager->GetCurrentScene()->DrawScene(memoryDC);
+			
+			//GameManager는 입력을 받고, 입력에 따라 action을 수행
 			GameRuleManager->GetKeyInput();
-			//SceneStackManager->GetCurrentScene()->
+			GameRuleManager->DoAction();
 
+			//double buffering
 			BitBlt(hdc, 0, 0, 800, 600, memoryDC, 0, 0, SRCCOPY);
 
 			DeleteObject(memoryBitmap);

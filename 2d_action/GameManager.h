@@ -3,6 +3,7 @@
 #include <iterator>
 #include "InputManager.h"
 #include "ActionManager.h"
+#include "Scene.h"
 
 class GameManager
 {
@@ -22,12 +23,14 @@ public:
 	}
 
 	void	GetKeyInput();
-	void	DoCharacterAction();
+	void	DoAction();
 
 private:
 	static GameManager* instance;
 	GameManager()
 		:inputManager(new InputManager), actionManager(new ActionManager){};
+
+	void SceneAction(Scene* scene, int keyInput);
 
 	InputManager*	inputManager;
 	ActionManager*	actionManager;

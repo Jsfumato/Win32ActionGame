@@ -28,6 +28,9 @@
     <Filter Include="Header Files\ExternFile">
       <UniqueIdentifier>{f4063041-bfc0-4726-92a4-33d71308d9f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Character">
+      <UniqueIdentifier>{5a670abe-4294-4bf1-9902-e46e6bbfce09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -131,6 +134,9 @@
     <ClCompile Include="Label.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CharacterGabeNewell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2d_action.rc">
@@ -145,6 +151,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Sprite\BackgroundImage\background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Sprite\Character\GabeNewell.png">
+      <Filter>Resource Files\Character</Filter>
+    </Image>
+    <Image Include="Sprite\Character\profile_GabeNewell.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

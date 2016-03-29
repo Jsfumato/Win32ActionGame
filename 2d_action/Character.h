@@ -6,10 +6,9 @@
 class Character : public Object
 {
 public:
-	virtual bool	HitCheck() = 0;
-	virtual bool	IsHit();
+	//virtual bool	HitCheck() = 0;
+	//virtual bool	IsHit();
 	
-	CImage		CharacterSprite;
 	std::string name;
 
 	Character(std::string cName, std::wstring fileName, int HitPoint)
@@ -18,7 +17,13 @@ public:
 		SetSprite(fileName, L"Character");
 	}
 
-private:
+	void DrawProfile(HDC hdc, int xDest, int yDest);
+
+protected:
+	CImage profileImage;
+	CImage CharacterSprite;
+	
 	std::string	characterName;
 	int	hitPoint;
+	bool SetProfile(std::wstring fileName, std::wstring folderName);
 };

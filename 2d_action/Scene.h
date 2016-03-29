@@ -21,7 +21,9 @@ public:
 			delete iter;
 	};
 
-	void DrawScene(HDC hdc);
+	virtual void DrawScene(HDC hdc) const;
+	virtual void DoAction(int keyInput);
+
 	bool SetBackgroundImage(std::wstring bgName);
 	bool AppendObject(Object* object);
 

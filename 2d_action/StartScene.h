@@ -1,6 +1,5 @@
 #pragma once
 #include "Scene.h"
-#include "Label.h"
 
 class StartScene : public Scene
 {
@@ -11,9 +10,9 @@ public:
 	{
 		InitScene();
 	};
-
+	void DoAction(int keyInput);
 	void InitScene();
 
 private:
-
+	
 };

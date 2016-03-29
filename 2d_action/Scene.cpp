@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Scene.h"
 
-void Scene::DrawScene(HDC hdc)
+void Scene::DrawScene(HDC hdc) const
 {
 	backgroundImage.BitBlt(hdc, 0, 0, 800, 600, 0, 0, SRCCOPY);
 
@@ -9,6 +9,11 @@ void Scene::DrawScene(HDC hdc)
 	{
 		iter->Draw(hdc);
 	}
+}
+
+void Scene::DoAction(int keyInput)
+{
+
 }
 
 bool Scene::SetBackgroundImage(std::wstring bgName)

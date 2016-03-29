@@ -1,12 +1,13 @@
 #include "stdafx.h"
 #include "InputManager.h"
+#include "GameConfig.h"
 
 void InputManager::InputCommand()
 {
 	myInput->KeyboardProcess();
 
 //	키가 눌린 순간 CommandQueue에 입력
-	for each (auto& keyNum in Player1CommandList)
+	for each (auto& keyNum in playerKey::Player1CommandList)
 	{
 		bool isKeyInput = myInput->GetKeyDown(keyNum);
 		
@@ -27,6 +28,12 @@ void InputManager::InputCommand()
 	CommandValidTimeCheck(
 		[](int CommandTime){ return CommandTime > 2000; }
 	);
+}
+
+const int InputManager::GetLastCommand()
+{
+	if (CommandWithTimeQueue.size() != 0)
+		return CommandWithTimeQueue.back().first;
 }
 
 const void InputManager::GetCommandList()

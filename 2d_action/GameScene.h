@@ -1,7 +1,10 @@
 #pragma once
 #include "Scene.h"
 
-class GameScene : Scene
+class GameScene : public Scene
 {
+public:
+
+private:
 
 };
