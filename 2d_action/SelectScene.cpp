@@ -39,9 +39,12 @@ void SelectScene::DoAction(int keyInput)
 
 	if (keyInput == 'A')
 	{
-		GameScene* gameScene = new GameScene(L"SelectScene.png");
+		GameScene* gameScene = new GameScene(L"GameScene.png");
 		if (selectedCharacter != nullptr)
+		{
 			gameScene->AddCharacter(selectedCharacter);
+			selectedCharacter->SetDestPosition(0, 300);
+		}
 
 		SceneManager::GetInstance()->PushScene(gameScene);
 	}

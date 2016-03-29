@@ -150,11 +150,5 @@
     <Image Include="2d_action.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Sprite\BackgroundImage\background.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Sprite\Character\profile_GabeNewell.png">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
 </Project>
