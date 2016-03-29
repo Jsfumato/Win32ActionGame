@@ -7,9 +7,12 @@ void InputManager::InputCommand()
 	myInput->KeyboardProcess();
 
 //	키가 눌린 순간 CommandQueue에 입력
+
+//	키가 눌린 순간과 눌려있는 순간을 구분하는 방법을 찾아야 함
 	for each (auto& keyNum in playerKey::Player1CommandList)
 	{
 		bool isKeyInput = myInput->GetKeyDown(keyNum);
+		//bool isKeyInput = myInput->GetKey(keyNum);
 		
 		if (isKeyInput == false)
 			continue;
@@ -46,7 +49,7 @@ void InputManager::CommandValidTimeCheck(std::function<bool(int)> closure)
 	std::vector<std::pair<int, int>>::iterator iter = CommandWithTimeQueue.begin();
 
 //	순환 중에 item 삭제시 뒤의 순서가 엉킴...
-//	erase 하는 경우 바로 iterator를 빠져나가서 위의 상황을 방지한다
+//	erase 하는 경우 바로 iterator를 빠져나가서 위의 상황을 방지
 	for (iter; iter < CommandWithTimeQueue.end(); ++iter)
 	{
 		if (closure(iter->second))
@@ -65,19 +68,3 @@ void InputManager::AddClockCommendTime()
 		iter.second += 1;
 	}
 }
-
-/*
-
-for (auto& iter : CommandWithTimeQueue)
-{
-	if (iter.second > 10)
-		
-}
-
-Question
-
-	제가 직접 iterator 형을 선언하여 for 문을 돌리는 경우에는 위의 경우처럼 잘 돌아갑니다만
-	왜 auto를 이용해 캐스팅을 하려하면 원하는 타입으로 형식 추론이 되지 않을까요
-	이번 EMC++ item 1, 2에서 한 내용입니다만 책에서 못 본것 같은데
-	std::pair에 대해서도 예외가 존재하는 건가요???
-*/

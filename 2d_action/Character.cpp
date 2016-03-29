@@ -24,6 +24,16 @@ void Character::DrawProfile(HDC hdc, int xDest, int yDest)
 	profileImage.BitBlt(hdc, xDest, yDest, 200, 300, 0, 0, SRCCOPY);
 }
 
+void Character::Draw(HDC hdc)
+{
+	//if (currentState == state::DEFAULT)
+	objectImage.TransparentBlt(
+		hdc, m_xDest, m_yDest, m_spriteWidth*3, m_spriteHeight*3, 
+		m_spriteWidth*spriteIndex, 0, m_spriteWidth, m_spriteHeight, m_transColor);
+
+	spriteIndex = (spriteIndex + 1)%7;
+}
+
 void Character::MoveCharacter(int direction)
 {
 	int dir = direction / abs(direction);

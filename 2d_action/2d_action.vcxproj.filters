@@ -153,9 +153,6 @@
     <Image Include="Sprite\BackgroundImage\background.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Sprite\Character\GabeNewell.png">
-      <Filter>Resource Files\Character</Filter>
-    </Image>
     <Image Include="Sprite\Character\profile_GabeNewell.png">
       <Filter>Resource Files</Filter>
     </Image>

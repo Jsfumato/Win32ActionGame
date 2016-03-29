@@ -3,28 +3,31 @@
 #include <string>
 #include "Object.h"
 
+enum state {DEFAULT = 0, JUMP, SITDOWN, KNOCKDOWN};
+
 class Character : public Object
 {
 public:
 	//virtual bool	HitCheck() = 0;
 	//virtual bool	IsHit();
-	
-	std::string name;
 
-	Character(std::string cName, std::wstring fileName, int HitPoint)
-		:characterName(cName), hitPoint(HitPoint)
+	Character(std::wstring fileName) : Object(100, 150)
 	{
 		SetSprite(fileName, L"Character");
+		spriteIndex = 0;
+		currentState = state::DEFAULT;
 	}
 
 	void DrawProfile(HDC hdc, int xDest, int yDest);
 	
+	virtual void Draw(HDC hdc);
 	virtual void MoveCharacter(int direction);
 
 protected:
 	CImage profileImage;
+	int spriteIndex;
+	state currentState;
 	
 	std::string	characterName;
-	int	hitPoint;
 	bool SetProfile(std::wstring fileName, std::wstring folderName);
 };

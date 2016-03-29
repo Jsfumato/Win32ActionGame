@@ -5,7 +5,7 @@ class CharacterGabeNewell : public Character
 {
 public:
 	CharacterGabeNewell()
-		:Character("GabeNewell", L"GabeNewell_0.png", 20000)
+		:Character(L"sprite_gabe.png")
 	{
 		SetProfile(L"profile_GabeNewell.png", L"Character");
 	};

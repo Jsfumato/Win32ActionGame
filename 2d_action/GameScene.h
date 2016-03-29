@@ -11,7 +11,6 @@ public:
 		InitScene();
 	};
 	
-	
 	void AddCharacter(Character* character);
 
 //	Scene의 method 재정의

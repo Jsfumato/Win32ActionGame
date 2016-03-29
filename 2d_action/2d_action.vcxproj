@@ -125,7 +125,6 @@
     <Image Include="2d_action.ico" />
     <Image Include="small.ico" />
     <Image Include="Sprite\BackgroundImage\background.png" />
-    <Image Include="Sprite\Character\GabeNewell.png" />
     <Image Include="Sprite\Character\profile_GabeNewell.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

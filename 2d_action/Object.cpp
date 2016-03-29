@@ -6,7 +6,6 @@ void Object::Draw(HDC hdc)
 	if (objectImage == NULL)
 		return;
 
-	//objectImage.BitBlt(hdc, m_xDest, m_yDest, m_nDestWidth, m_nDestHeight, m_xSrc, m_ySrc, m_dwROP);
 	bool result = objectImage.TransparentBlt(hdc, m_xDest, m_yDest, m_nDestWidth, m_nDestHeight, m_xSrc, m_ySrc, m_nSrcWidth, m_nSrcHeight, m_transColor);
 }																								   
 
