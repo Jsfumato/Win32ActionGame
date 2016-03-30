@@ -93,6 +93,9 @@
     <ClInclude Include="MyInput.h">
       <Filter>Header Files\ExternFile</Filter>
     </ClInclude>
+    <ClInclude Include="MyTime.h">
+      <Filter>Header Files\ExternFile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -135,6 +138,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CharacterGabeNewell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

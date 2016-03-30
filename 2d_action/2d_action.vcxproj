@@ -88,6 +88,7 @@
     <ClInclude Include="ActionManager.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Label.h" />
+    <ClInclude Include="MyTime.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="InputManager.h" />
@@ -108,6 +109,7 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Label.cpp" />
+    <ClCompile Include="MyTime.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />

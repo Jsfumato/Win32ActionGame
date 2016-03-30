@@ -5,6 +5,7 @@
 #include "2d_action.h"
 #include "GameManager.h"
 #include "SceneManager.h"
+#include "MyTime.h"
 
 /*
 	::	131088 Hwang JongSung
@@ -20,12 +21,16 @@
 #define MAX_LOADSTRING 100
 
 // Global Variables:
+const int MAX_FPS = 40;
+int			hardwareFps;
+
 HINSTANCE hInst;								// current instance
 HWND hWnd;
 TCHAR szTitle[MAX_LOADSTRING];					// The title bar text
 TCHAR szWindowClass[MAX_LOADSTRING];			// the main window class name
 
 //	custom class
+CMyTime*		MyTime = nullptr;
 CMyInput*		MyInput = nullptr;
 GameManager*	GameRuleManager = nullptr;
 SceneManager*	SceneStackManager = nullptr;
@@ -61,6 +66,15 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 
 	hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_MY2D_ACTION));
 
+	//fps 제한을 위한 코드
+	
+	MyTime->ProcessTime();
+	float time = MyTime->GetElapsedTime();
+	hardwareFps = 1000 / time;
+
+	float frameDelayed = hardwareFps / MAX_FPS;
+	float currentFrame = 0;
+
 	// Main message loop:
 	while (true)
 	{
@@ -75,6 +89,8 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 		{
 			//Game Logic을 최대한 Win32와 분리하는 것이 목적
 			//후에 다른 Game Engine에 이식가능한 수준으로 제작할 수 있어야...
+			if (currentFrame++ < frameDelayed*30000)
+				continue;
 
 			HDC hdc = GetDC(hWnd);
 
@@ -98,6 +114,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 			DeleteDC(memoryDC);
 
 			ReleaseDC(hWnd, hdc);
+			currentFrame = 0;
 		}
 	}
 
@@ -154,7 +171,11 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
       return FALSE;
    }
 
+   MyTime = new CMyTime();
+   MyTime->Init();
+
    MyInput = new CMyInput();
+
    GameRuleManager = GameManager::GetInstance();
    SceneStackManager = SceneManager::GetInstance();
    SceneStackManager->Init();
