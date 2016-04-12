@@ -8,6 +8,8 @@ void SceneManager::Init()
 	PushScene(startScene);
 }
 
+//Scene을 상속받은 다양한 Scene class들이 들어갈텐데
+//emplace_back을 사용할 수 있을까?
 void SceneManager::PushScene(Scene* scene)
 {
 	SceneStack.push_back(scene);

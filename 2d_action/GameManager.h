@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
 #include <iterator>
+#include <memory>
 #include "Singleton.h"
 #include "InputManager.h"
-#include "ActionManager.h"
 #include "Scene.h"
 
 class GameManager : public Singleton<GameManager>
@@ -11,19 +11,15 @@ class GameManager : public Singleton<GameManager>
 public:
 	~GameManager()
 	{
-		delete inputManager;
-		delete actionManager;
+		inputManager.release();
 	}
 
 	void	GetKeyInput();
 	void	DoAction();
 
-	GameManager()
-		:inputManager(new InputManager), actionManager(new ActionManager){};
+	GameManager(){};
 
 private:
 	void SceneAction(Scene* scene, int keyInput);
-
-	InputManager*	inputManager;
-	ActionManager*	actionManager;
+	std::unique_ptr<InputManager> inputManager = std::make_unique<InputManager>();
 };

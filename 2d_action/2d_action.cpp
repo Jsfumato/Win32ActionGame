@@ -10,13 +10,7 @@
 
 /*
 	::	131088 Hwang JongSung
-	::	Win32 API를 이용한 action game 구현을 목표로 함
-
-	::	다음 목표 중 1:
-
-		* 후에 layer를 구현하여 각 componenet 들을 분리하여 관리할 수 있도록
-			- http://stackoverflow.com/questions/12479386/how-to-draw-text-with-transparent-background-using-c-winapi
-		* http://skmagic.tistory.com/entry/%EC%B4%88%EB%8B%B9-%ED%94%84%EB%A0%88%EC%9E%84-%EC%88%98-fps-Frame-Per-Second-%EC%B4%9D%EC%A0%95%EB%A6%AC
+	::	Win32 API를 이용한 action game 구현을 목표
 */
 
 #define MAX_LOADSTRING 100
@@ -33,11 +27,7 @@ TCHAR szWindowClass[MAX_LOADSTRING];			// the main window class name
 //	custom class
 std::unique_ptr<CMyTime>		MyTime = nullptr;
 std::unique_ptr<CMyInput>		MyInput = nullptr;
-//std::unique_ptr<GameManager>	GameRuleManager = nullptr;
-//std::unique_ptr<SceneManager>	SceneStackManager = nullptr;
 
-//CMyTime*		MyTime = nullptr;
-//CMyInput*		MyInput = nullptr;
 GameManager*	GameRuleManager = nullptr;
 SceneManager*	SceneStackManager = nullptr;
 
@@ -181,10 +171,6 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    MyTime->Init();
    MyInput = std::make_unique<CMyInput>();
    
-   //MyTime = new CMyTime();
-   //MyTime->Init();
-   //MyInput = new CMyInput();
-
    GameRuleManager = GameManager::GetInstance();
    SceneStackManager = SceneManager::GetInstance();
    SceneStackManager->Init();

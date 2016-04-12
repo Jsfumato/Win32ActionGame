@@ -8,9 +8,6 @@ enum state {DEFAULT = 0, JUMP, SITDOWN, KNOCKDOWN};
 class Character : public Object
 {
 public:
-	//virtual bool	HitCheck() = 0;
-	//virtual bool	IsHit();
-
 	Character(std::wstring fileName) : Object(100, 150)
 	{
 		SetSprite(fileName, L"Character");
