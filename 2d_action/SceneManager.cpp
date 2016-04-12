@@ -1,8 +1,6 @@
 #include "stdafx.h"
 #include "SceneManager.h"
 
-SceneManager* SceneManager::instance = nullptr;
-
 void SceneManager::Init()
 {
 	StartScene* startScene = new StartScene(L"StartScene.png");

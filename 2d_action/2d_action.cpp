@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include <memory>
 #include "2d_action.h"
 #include "GameManager.h"
 #include "SceneManager.h"
@@ -30,8 +31,13 @@ TCHAR szTitle[MAX_LOADSTRING];					// The title bar text
 TCHAR szWindowClass[MAX_LOADSTRING];			// the main window class name
 
 //	custom class
-CMyTime*		MyTime = nullptr;
-CMyInput*		MyInput = nullptr;
+std::unique_ptr<CMyTime>		MyTime = nullptr;
+std::unique_ptr<CMyInput>		MyInput = nullptr;
+//std::unique_ptr<GameManager>	GameRuleManager = nullptr;
+//std::unique_ptr<SceneManager>	SceneStackManager = nullptr;
+
+//CMyTime*		MyTime = nullptr;
+//CMyInput*		MyInput = nullptr;
 GameManager*	GameRuleManager = nullptr;
 SceneManager*	SceneStackManager = nullptr;
 
@@ -171,10 +177,13 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
       return FALSE;
    }
 
-   MyTime = new CMyTime();
+   MyTime = std::make_unique<CMyTime>();
    MyTime->Init();
-
-   MyInput = new CMyInput();
+   MyInput = std::make_unique<CMyInput>();
+   
+   //MyTime = new CMyTime();
+   //MyTime->Init();
+   //MyInput = new CMyInput();
 
    GameRuleManager = GameManager::GetInstance();
    SceneStackManager = SceneManager::GetInstance();
