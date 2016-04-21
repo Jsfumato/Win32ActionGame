@@ -1,0 +1,205 @@
+{ "frames": [
+   {
+    "filename": "Sprite-0004 0.ase",
+    "frame": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 1.ase",
+    "frame": { "x": 100, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 2.ase",
+    "frame": { "x": 200, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 3.ase",
+    "frame": { "x": 300, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 4.ase",
+    "frame": { "x": 400, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 5.ase",
+    "frame": { "x": 500, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 6.ase",
+    "frame": { "x": 600, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 7.ase",
+    "frame": { "x": 700, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 8.ase",
+    "frame": { "x": 800, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 9.ase",
+    "frame": { "x": 900, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 10.ase",
+    "frame": { "x": 1000, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 11.ase",
+    "frame": { "x": 1100, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 12.ase",
+    "frame": { "x": 1200, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 13.ase",
+    "frame": { "x": 1300, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 14.ase",
+    "frame": { "x": 1400, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 15.ase",
+    "frame": { "x": 1500, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 16.ase",
+    "frame": { "x": 1600, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 17.ase",
+    "frame": { "x": 1700, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 18.ase",
+    "frame": { "x": 1800, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 19.ase",
+    "frame": { "x": 1900, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0004 20.ase",
+    "frame": { "x": 2000, "y": 0, "w": 100, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 100, "h": 150 },
+    "sourceSize": { "w": 100, "h": 150 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.1.4.1",
+  "image": "C:\\Users\\Jsfumato\\Documents\\Visual Studio 2013\\Projects\\2d_action\\2d_action\\Sprite\\Character\\Sprite-0004.png",
+  "format": "RGBA8888",
+  "size": { "w": 2100, "h": 150 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "default", "from": 0, "to": 6, "direction": "forward" },
+   { "name": "move", "from": 7, "to": 14, "direction": "forward" },
+   { "name": "punch", "from": 15, "to": 20, "direction": "forward" }
+  ]
+ }
+}

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SelectScene.h"
 #include "SceneManager.h"
+#include "GameScene.h"
 #include "Label.h"
 #include "GabeNewell.h"
 
@@ -11,16 +12,7 @@ void SelectScene::InitScene()
 	Label* selectText = new Label(L"Select Character");
 	AppendObject(selectText);
 
-	/*startText->SetDestPosition(
-	config::WindowWidth / 2,
-	config::WindowHeight / 2
-	);*/
-
-	selectText->SetDestPosition(
-		400,
-		300
-		);
-
+	selectText->SetDestPosition(400, 300);
 
 	characterList.push_back(new CharacterGabeNewell());
 

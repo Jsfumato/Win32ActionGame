@@ -2,9 +2,6 @@
 #include <vector>
 #include "Singleton.h"
 #include "Scene.h"
-#include "StartScene.h"
-#include "SelectScene.h"
-#include "GameScene.h"
 
 class SceneManager : public Singleton<SceneManager>
 {

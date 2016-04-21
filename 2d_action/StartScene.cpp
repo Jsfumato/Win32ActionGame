@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "StartScene.h"
+#include "SelectScene.h"
 #include "SceneManager.h"
 #include "Label.h"
-//#include "GameConfig.h"
 
 void StartScene::InitScene()
 {

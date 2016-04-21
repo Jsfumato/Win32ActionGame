@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "SceneManager.h"
+#include "StartScene.h"
+#include "SelectScene.h"
+#include "GameScene.h"
 
 void SceneManager::Init()
 {

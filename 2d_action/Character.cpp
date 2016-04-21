@@ -25,12 +25,14 @@ void Character::DrawProfile(HDC hdc, int xDest, int yDest)
 }
 
 void Character::Draw(HDC hdc)
-{
-	//if (currentState == state::DEFAULT)
-	objectImage.TransparentBlt(
-		hdc, m_xDest, m_yDest, m_spriteWidth*2, m_spriteHeight*2, 
-		m_spriteWidth*spriteIndex, 0, m_spriteWidth, m_spriteHeight, m_transColor);
 
+{
+	if (currentState == state::DEFAULT)
+	{
+		objectImage.TransparentBlt(
+			hdc, m_xDest, m_yDest, m_spriteWidth * 2, m_spriteHeight * 2,
+			m_spriteWidth*spriteIndex, 0, m_spriteWidth, m_spriteHeight, m_transColor);
+	}
 	spriteIndex = (spriteIndex + 1)%7;
 }
 

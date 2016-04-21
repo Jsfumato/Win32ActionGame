@@ -2,8 +2,6 @@
 #include "GameManager.h"
 #include "SceneManager.h"
 
-//GameManager* GameManager::instance = nullptr;
-
 void GameManager::GetKeyInput()
 {
 	inputManager->InputCommand();

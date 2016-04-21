@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include <fstream>
 #include "Object.h"
 
 void Object::Draw(HDC hdc)
@@ -24,6 +25,25 @@ bool Object::SetSprite(std::wstring fileName, std::wstring folderName)
 	if (objectImage == NULL)
 		return false;
 
+	return true;
+}
+
+bool Object::SetJsonFile(std::wstring fileName, std::wstring folderName)
+{
+	WCHAR	szPath[256];
+	GetCurrentDirectory(sizeof(szPath), szPath);
+
+	wcscat_s(szPath, L"/Sprite/");
+	wcscat_s(szPath, folderName.c_str());
+	wcscat_s(szPath, L"/");
+	wcscat_s(szPath, fileName.c_str());
+
+	std::ifstream ifs(szPath);
+	ifs >> jsonFile;
+
+	if (jsonFile.empty() == true)
+		return false;
+		
 	return true;
 }
 

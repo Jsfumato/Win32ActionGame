@@ -7,27 +7,27 @@
 #include "GameManager.h"
 #include "SceneManager.h"
 #include "MyTime.h"
+//#include "GameConfig.h"
 
 /*
 	::	131088 Hwang JongSung
 	::	Win32 API를 이용한 action game 구현을 목표
 */
 
-#define MAX_LOADSTRING 100
-
 // Global Variables:
+const int MAX_LOADSTRING = 100;
 const int MAX_FPS = 40;
+
 int			hardwareFps;
 
 HINSTANCE hInst;								// current instance
-HWND hWnd;
+HWND g_hWnd;
 TCHAR szTitle[MAX_LOADSTRING];					// The title bar text
 TCHAR szWindowClass[MAX_LOADSTRING];			// the main window class name
 
 //	custom class
 std::unique_ptr<CMyTime>		MyTime = nullptr;
 std::unique_ptr<CMyInput>		MyInput = nullptr;
-
 GameManager*	GameRuleManager = nullptr;
 SceneManager*	SceneStackManager = nullptr;
 
@@ -63,7 +63,6 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_MY2D_ACTION));
 
 	//fps 제한을 위한 코드
-	
 	MyTime->ProcessTime();
 	float time = MyTime->GetElapsedTime();
 	hardwareFps = 1000 / time;
@@ -85,10 +84,10 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 		{
 			//Game Logic을 최대한 Win32와 분리하는 것이 목적
 			//후에 다른 Game Engine에 이식가능한 수준으로 제작할 수 있어야...
-			if (currentFrame++ < frameDelayed*30000)
+			if (currentFrame++ < frameDelayed*10000)
 				continue;
 
-			HDC hdc = GetDC(hWnd);
+			HDC hdc = GetDC(g_hWnd);
 
 			//메모리 버퍼 생성
 			HDC		memoryDC = CreateCompatibleDC(hdc);
@@ -109,7 +108,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 			DeleteObject(memoryBitmap);
 			DeleteDC(memoryDC);
 
-			ReleaseDC(hWnd, hdc);
+			ReleaseDC(g_hWnd, hdc);
 			currentFrame = 0;
 		}
 	}
@@ -123,7 +122,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 //  FUNCTION: MyRegisterClass()
 //
 //  PURPOSE: Registers the window class.
-//
+//	http://wysmalu.tistory.com/entry/API-%EC%86%8C%EC%8A%A4%EB%B6%84%EC%84%9Dfirst-%EC%9C%88%EB%8F%84%EC%9A%B0-%ED%81%B4%EB%9E%98%EC%8A%A4
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
 	WNDCLASSEX wcex;
@@ -159,10 +158,10 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // Store instance handle in our global variable
 
-   hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+   g_hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL);
 
-   if (!hWnd)
+   if (!g_hWnd)
    {
       return FALSE;
    }
@@ -175,8 +174,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    SceneStackManager = SceneManager::GetInstance();
    SceneStackManager->Init();
    
-   ShowWindow(hWnd, nCmdShow);
-   UpdateWindow(hWnd);
+   ShowWindow(g_hWnd, nCmdShow);
+   UpdateWindow(g_hWnd);
 
    return TRUE;
 }
