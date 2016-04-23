@@ -7,7 +7,6 @@ void InputManager::InputCommand()
 	myInput->KeyboardProcess();
 
 //	키가 눌린 순간 CommandQueue에 입력
-
 //	키가 눌린 순간과 눌려있는 순간을 구분하는 방법을 찾아야 함
 	for (auto& keyNum : playerKey::Player1CommandList)
 	{
@@ -16,7 +15,6 @@ void InputManager::InputCommand()
 		if (isKeyInput == false)
 			continue;
 
-		//CommandWithTimeQueue.push_back(std::make_tuple(keyNum, 0));
 		CommandWithTimeQueue.emplace_back(keyNum, 0);
 	}
 

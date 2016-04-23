@@ -23,8 +23,14 @@ void GameScene::DrawScene(HDC hdc) const
 void GameScene::DoAction(int keyInput)
 {
 	if (keyInput == VK_RIGHT)
+	{
+		characterList[0]->SetState(state::MOVE);
 		characterList[0]->MoveCharacter(1);
+	}
 
 	if (keyInput == VK_LEFT)
+	{
+		characterList[0]->SetState(state::MOVE);
 		characterList[0]->MoveCharacter(-1);
+	}
 }

@@ -10,7 +10,7 @@ void Object::Draw(HDC hdc)
 	bool result = objectImage.TransparentBlt(hdc, m_xDest, m_yDest, m_nDestWidth, m_nDestHeight, m_xSrc, m_ySrc, m_nSrcWidth, m_nSrcHeight, m_transColor);
 }																								   
 
-bool Object::SetSprite(std::wstring fileName, std::wstring folderName)
+bool Object::SetSprite(std::wstring folderName, std::wstring fileName)
 {
 	WCHAR	szPath[256];
 	GetCurrentDirectory(sizeof(szPath), szPath);
@@ -28,7 +28,7 @@ bool Object::SetSprite(std::wstring fileName, std::wstring folderName)
 	return true;
 }
 
-bool Object::SetJsonFile(std::wstring fileName, std::wstring folderName)
+bool Object::SetJsonFile(std::wstring folderName, std::wstring fileName)
 {
 	WCHAR	szPath[256];
 	GetCurrentDirectory(sizeof(szPath), szPath);

@@ -17,24 +17,27 @@ enum class state {
 class Character : public Object
 {
 public:
-	Character(std::wstring fileName) : Object(100, 150)
+	Character(std::wstring fileName)
+		:Object(L"Character", fileName)
 	{
-		SetSprite(fileName, L"Character");
-		SetJsonFile(L"Sprite-0004.json", L"Character");
-	
-		spriteIndex = 0;
-		currentState = state::DEFAULT;
+		SetState(state::DEFAULT);
+		numOfState = stateMax - stateMin;
 	}
 
 	void DrawProfile(HDC hdc, int xDest, int yDest);
-	
+	void SetState(state state);
+
 	virtual void Draw(HDC hdc);
 	virtual void MoveCharacter(int direction);
-
+	
 protected:
 	CImage profileImage;
 	int spriteIndex;
-	state currentState;
+	int stateMin = 0;
+	int stateMax = 0;
+	int numOfState = 0;
+
+	state currentState = state::MAX_STATE;
 
 	std::string	characterName;
 	bool SetProfile(std::wstring fileName, std::wstring folderName);

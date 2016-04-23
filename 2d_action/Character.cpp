@@ -27,13 +27,19 @@ void Character::DrawProfile(HDC hdc, int xDest, int yDest)
 void Character::Draw(HDC hdc)
 
 {
-	if (currentState == state::DEFAULT)
-	{
+	//if (currentState == state::DEFAULT)
+	//{
+	//	objectImage.TransparentBlt(
+	//		hdc, m_xDest, m_yDest, m_spriteWidth * 2, m_spriteHeight * 2,
+	//		m_spriteWidth*spriteIndex, 0, m_spriteWidth, m_spriteHeight, m_transColor);
+	//}
+	//if (currentState == state::MOVE)
+	//{
 		objectImage.TransparentBlt(
 			hdc, m_xDest, m_yDest, m_spriteWidth * 2, m_spriteHeight * 2,
-			m_spriteWidth*spriteIndex, 0, m_spriteWidth, m_spriteHeight, m_transColor);
-	}
-	spriteIndex = (spriteIndex + 1)%7;
+			m_spriteWidth*(spriteIndex + stateMin), 0, m_spriteWidth, m_spriteHeight, m_transColor);
+//	}
+	spriteIndex = (spriteIndex + 1) % numOfState;
 }
 
 void Character::MoveCharacter(int direction)
@@ -47,4 +53,18 @@ void Character::MoveCharacter(int direction)
 		return;
 
 	m_xDest = newXDest;
+}
+
+void Character::SetState(state state)
+{
+	if (state == currentState)
+		return;
+	
+	spriteIndex = 0;
+	currentState = state;
+
+	int stateNum = static_cast<int>(currentState);
+	stateMin = jsonFile["meta"]["frameTags"][stateNum]["from"];
+	stateMax = jsonFile["meta"]["frameTags"][stateNum]["to"];
+	numOfState = stateMax - stateMin;
 }
